@@ -5,3 +5,4 @@ node_modules
 *.js.map
 !global.d.ts
 coverage
+build
