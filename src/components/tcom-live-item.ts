@@ -59,7 +59,7 @@ export default class TcomLiveItem extends LitElement {
           <div class="rank">${this.index}.</div>
           <div class="votearrow"></div>
           <a href="${this.item.url}">${this.item.title}</a>
-          <div class="by">${this.getHost(this.item.url)}</div>
+          <div class="by">&nbsp;${this.getHost(this.item.url)}</div>
         </div>
         <div class="line-two">
           ${this.item.score} points by ${this.item.by}
@@ -73,14 +73,17 @@ export default class TcomLiveItem extends LitElement {
   getHost(url: string) {
     try {
       const parsedUrl = new URL(url);
-      return html`&nbsp;(${parsedUrl.hostname.replace("www", "")})`;
+      return `(${parsedUrl.hostname.replace("www", "")})`;
     } catch (e) {
       return "";
     }
   }
 
   getTimeSpent(timestamp: number) {
-    const date = parse(timestamp.toString(), "t", new Date());
-    return distanceInWordsToNow(date);
+    if (timestamp) {
+      const date = parse(timestamp.toString(), "t", new Date());
+      return distanceInWordsToNow(date);
+    }
+    return "";
   }
 }
