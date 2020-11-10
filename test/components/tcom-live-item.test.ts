@@ -93,9 +93,11 @@ describe("tcom-live-item", () => {
     expect(a?.innerText).to.be.equal(
       "Apple unveils M1, its first system-on-a-chip for portable Mac computers"
     );
-    expect(lineTwo?.innerText).to.be.equal(
-      "694 points by runesoerensen about 5 hours | 806"
-    );
+    expect(
+      /694 points by runesoerensen about \d+ hours | 806/.test(
+        lineTwo?.innerText as string
+      )
+    ).to.be.equal(true);
   });
 
   it("display with null item", async () => {
