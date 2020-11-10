@@ -12,8 +12,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
-
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          always-auth: true
+          node-version: '14.x'
+          registry-url: https://registry.npmjs.org
+          scope: '@octocat'
+ 
       - uses: microsoft/playwright-github-action@v1
 
       - name: Install dependencies and run tests
