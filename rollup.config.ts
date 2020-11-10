@@ -8,7 +8,7 @@ const baseConfig = createSpaConfig({
 
 export default merge(baseConfig, {
   input: "./index.html",
-  onwarn(warning) {
+  onwarn(warning: any) {
     // Skip certain warnings
 
     // should intercept ... but doesn't in some rollup versions
