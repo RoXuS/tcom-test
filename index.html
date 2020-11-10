@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>tcom-test</title>
+  <meta name="description" content="tcom-test">
+
+  <base href="/">
+
+  <script type="module" src="./src/pages/tcom-app.js"></script>
+  <script>
+    // For redux
+    window.process = { env: { NODE_ENV: 'production' } };
+  </script>
+</head>
+
+<body>
+  <tcom-app></tcom-app>
+</body>
+
+</html>
