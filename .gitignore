@@ -1,0 +1,6 @@
+node_modules
+*.d.ts
+*.js
+*d.ts.map
+*.js.map
+!global.d.ts
