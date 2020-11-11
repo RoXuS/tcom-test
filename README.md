@@ -16,3 +16,6 @@
 
 ## Build project
     npm run test
+
+## Deploy
+    npm run deploy
